@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Image Puzzle</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/image-puzzle.css" rel="stylesheet" />
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <script src="bootstrap/popper.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/image-puzzle.js"></script>
+</head>
+<body>
+    <div id="base" class="container jumbotron">
+            <div class="panel">
+                    <h2>Jquery Image Puzzle</h2>
+            </div>
+            <hr>
+        <div  id="collage"> 
+
+                <div  id="actualImageBox">
+                    <img id="actualImage" />
+                    <button class="btn btn-success">Click to Translate</button>   
+                </div>
+                
+                <ul id="sortable" class="sortable"></ul>            
+        <script>
+            $(function () {
+                imagePuzzle.startGame();
+            });
+        </script>
+      </div>
+    </div>
+</body>
+</html>

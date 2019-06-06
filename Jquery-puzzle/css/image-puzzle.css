@@ -1,0 +1,52 @@
+﻿
+#collage #actualImageBox {
+    display: inline-block;
+    font-size:0.8em;
+    margin: 10px 10px;
+    vertical-align: top;
+    width:280px;
+}
+
+#collage img#actualImage{
+  
+    height:280px;
+    width:280px;
+    border-radius: 10px;
+    margin :10px;
+}
+
+#collage #sortable {
+    
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 50px;
+    padding: 0;
+    width: 400px;   
+}
+    #collage #sortable li {
+        background-size: 400% 400%;
+        border: none;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
+        float: left;
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        display:none;
+    }
+.jumbotron{
+    position:absolute;
+    top:50px;
+    left : 200px;
+    
+}
+
+#base{
+    background :rgb(122, 185, 243);  
+    height: 600px;
+    border-radius:10px;
+}
+.btn{
+    margin-left:70px;
+}
