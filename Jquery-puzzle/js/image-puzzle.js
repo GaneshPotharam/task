@@ -2,11 +2,33 @@
     startGame: function (gridSize) {
         this.setImage(gridSize);
         $("button").click(function(){
-            
             $("#collage #sortable li").show();
-            $('#sortable').randomize();
+            
         });
-     },
+        $('#sortable').randomize();
+        this.enableSwapping('#sortable li');
+    },
+    enableSwapping: function (elem) {
+        $(elem).draggable({
+            snap: '#droppable',
+            snapMode: 'outer',
+            revert: "invalid",
+            helper: "clone"
+        });
+        $(elem).droppable({
+            drop: function (ui) {
+                var $dragElem = $(ui.draggable).clone().replaceAll(this);
+                $(this).replaceAll(ui.draggable);
+
+                currentList = $('#sortable > li').map(function (i, el) { return $(el).attr('data-value'); });
+                // if (isSorted(currentList))
+                //     $('#actualImageBox').empty().html($('#gameOver').html());
+                
+                imagePuzzle.enableSwapping(this);
+                imagePuzzle.enableSwapping($dragElem);
+            }
+        });
+    },
     
     setImage: function (gridSize) {
         gridSize = 3;
@@ -30,6 +52,13 @@
     }
 };
 
+function isSorted(arr) {
+    for (var i = 0; i < arr.length - 1; i++) {
+        if (arr[i] != i)
+            return false;
+    }
+    return true;
+}
 $.fn.randomize = function (selector) {
     var $elems = selector ? $(this).find(selector) : $(this).children(),
         $parents = $elems.parent();
