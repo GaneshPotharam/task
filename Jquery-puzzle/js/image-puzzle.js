@@ -21,9 +21,7 @@
                 $(this).replaceAll(ui.draggable);
 
                 currentList = $('#sortable > li').map(function (i, el) { return $(el).attr('data-value'); });
-                // if (isSorted(currentList))
-                //     $('#actualImageBox').empty().html($('#gameOver').html());
-                
+        
                 imagePuzzle.enableSwapping(this);
                 imagePuzzle.enableSwapping($dragElem);
             }
