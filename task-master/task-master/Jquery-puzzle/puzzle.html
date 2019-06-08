@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Image Puzzle</title>
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet" />
+    
+</head>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+       <script src="bootstrap/bootstrap.min.js"></script>
+    <script src="js/snappuz.js"></script>
+<body>
+    <div id="base" class="container jumbotron">
+            <div class="panel">
+                    <h2>Jquery Image Puzzle</h2>    
+            </div>
+            <hr>
+        <div  id="main"> 
+                <div class="puZContainer">
+                        <div class="puZWrap">
+                            <img class="puZImg" src="images/lotus-temple.jpg"/>
+                            <div id="puZMain">
+                            </div> 
+                        </div>   
+                </div> 
+                <button id="bt" class="btn btn-success">click to shuffle</button>        
+            </div>
+        </div>
+    </body>
+ <script>
+           $(document).ready(function(){
+            var gridSize=3;
+            var maxX = $('#puZMain').width()-$('#puZImg').width();
+            var maxY = $('#puZMain').width()-$('#puZImg').width();
+            // var $puzmain = $('#puZMain');
+            // var $puzimg = $('.puZImg');
+            $('body').css({margin:0});
+            $('h2').css({"text-align":" center","font-family": "'Times New Roman', Times, serif","color":" rgba(241, 216, 195, 0.76)","background":"rgb(32, 133, 111)","border":" 1px","border-radius" : "5px"});
+            $('#puZMain ').css({ "width": "100%","float": "left"});
+            $('.puZContainer').css( {"position":"relative" , "left" : "100px","background":"rgb(187, 172, 211)","height ": "400px","width ":" 400px","display":" inline-block"});
+            $('.jumbotron').css({"position":"absolute","top":"50px","left" : "200px"});
+            $('#base').css({"background ":"rgb(122, 185, 243)","height": "600px","border-radius":"10px"});
+           $('.btn').css({"position":"absolute", "right":"50px"});
+            
+
+        // for(var x = 0 ; x <3; x++){
+        //         for(var y=0 ; y<3;y++){
+        //             $('.snappuzzle-piece').css({
+        //                 width: $('.puZImg').width() / 3,
+        //                 height: $('.puZImg').width() /3,
+        //                 position: 'absolute',
+        //                 left: Math.floor((Math.random()*(maxX+1))),
+        //                 top: Math.floor((Math.random()*(maxY+1))),
+        //                 zIndex: Math.floor((Math.random()*10)+1),
+        //                 backgroundImage: 'url(images/lotus-temple.jpg)',
+        //                 backgroundPosition: (-3*pieceWidth)+'px '+(-3*pieceHeight)+'px',
+        //                 backgroundSize: that.width()
+        //             });
+        //         }
+  
+        //     }
+            
+            for (var i = 0; i < gridSize * gridSize; i++) {
+            var li = $('<li class="snappuzzle-piece" data-value="' + (i) + '"></li>').css({
+                'background-image': 'url(images/lotus-temple.jpg)',
+                'backgroundSize': (gridSize * 100) + '%',
+               'backgroundPosition': xpos + ' ' + ypos,
+                left: Math.floor((Math.random()*(maxX+1))),
+                top: Math.floor((Math.random()*(maxY+1))),
+                zIndex: Math.floor((Math.random()*10)+1),
+                'width': $('.puZImg').width() / gridSize,
+                'height':$('.puZImg').width() / gridSize
+            });
+            $('#puZMain').append(li);
+            }
+        });
+        // pieceWidth = that.width() / o.columns,
+        //             pieceHeight = that.height() / o.rows,
+        //             pile = $('#puzMain'),
+        //             maxX = pile.width() - pieceWidth,
+        //             maxY = pile.height() - pieceHeight,
+
+        </script>
+      
+
+</html>

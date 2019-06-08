@@ -1,0 +1,67 @@
+﻿
+#main #actualImageBox {
+    display: inline-block;
+    font-size:0.8em;
+    margin: 10px 10px;
+    vertical-align: top;
+    width:280px;
+}
+
+#main img#actualImage{
+  
+    height:280px;
+    width:280px;
+    border-radius: 10px;
+    margin :10px;
+}
+.puZWrap img {
+    max-width: 100%;
+    float: left;
+    height: auto;
+  }
+   
+  .snappuzzle-slot {
+    position: absolute;
+    background: #fff;
+    opacity: .7;
+  }
+   
+  .snappuzzle-slot-hover {
+    background: rgb(167, 155, 155);
+  }
+  #puZMain {
+    width: 100%;
+    float: left;
+  }
+  .snappuzzle-wrap {
+    position: relative;
+    display: block;
+  }
+  /* .snappuzzle-piece {
+    cursor: move;
+  } */
+.puZContainer{
+    position : relative ;
+    left : 100px;
+    background: rgb(187, 172, 211);
+    height : 400px;
+    width : 400px;
+    display: inline-block;
+
+}
+
+.jumbotron{
+    position:absolute;
+    top:50px;
+    left : 200px;
+    
+}
+
+#base{
+    background :rgb(122, 185, 243);  
+    height: 600px;
+    border-radius:10px;
+}
+.btn{
+    margin-left:70px;
+}
